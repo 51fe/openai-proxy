@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.27.2/dist/axios.min.js
+"></script>
+  <title>Simple ChatGPT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .welcome {
+      text-align: center;
+    }
+
+    form {
+      width: 80%;
+    }
+
+    #questionTa {
+      width: 100%;
+      padding: 6px;
+    }
+
+    #output {
+      white-space: pre-wrap;
+    }
+
+    .row {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+      padding: 6px 40px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 480px) {
+      form {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form onsubmit="handelSubmit(event)">
+      <h4 class="welcome">
+        我是小 C，欢迎您提问🙌
+      </h4>
+      <textarea id="questionTa" placeholder="问点啥…" rows="3" required></textarea>
+      <div class="row">
+        <button class="btn">提交</button>
+      </div>
+      <div id="output"></div>
+    </form>
+  </div>
+  <script>
+    var questionTa = document.getElementById('questionTa');
+    var output = document.getElementById('output');
+    function handelSubmit(event) {
+      event.preventDefault();
+      var prompt = questionTa.value;
+      if (prompt) {
+        output.innerHTML = '思考中…';
+        axios.post('/v1/completions', {
+          model: 'text-davinci-003',
+          temperature: 0,
+          max_tokens: 1024,
+          prompt: prompt
+        })
+          .then(response => {
+            output.innerHTML = response.data.choices[0].text.replace('\n\n', '');
+          })
+          .catch(error => {
+            output.innerHTML = error.response.data.message || '不好意思，开小差了😓';
+          });
+      } else {
+        question.focus();
+      }
+    }
+  </script>
+</body>
+
+</html>
