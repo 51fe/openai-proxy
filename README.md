@@ -4,7 +4,7 @@
 
 ## API KEY
 
-本文假设我们已经注册了 OpenAI 账号，如果还没有创建秘密密钥，可以如下图进行操作。
+本文假设我们已经注册了 OpenAI 账号，如果还没有创建 API 密钥，可以如下图进行操作。
 
 ![ai-api-key.png](https://www.riafan.com/uploads/2212/ai-api-key.png)
 
@@ -42,8 +42,6 @@
 左上角菜单 > “Project Settings” > “Env Variables”，填入先前生成的 API 密钥，如下图所示：
 
 ![env.png](https://www.riafan.com/uploads/2304/env.png)
-
-> 如果不打算分享服务，可以将 CodeSandbox 项目移动到草稿中私有化，可以提高服务的安全性。
 
 6. 重启服务
 

@@ -1,12 +1,12 @@
 {
-  "name": "oai-proxy",
+  "name": "openai-proxy",
   "version": "1.0.0",
   "description": "A proxy for OpenAI API",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["OpenAI", "Proxy"],
   "author": "",
   "license": "ISC",
   "dependencies": {
