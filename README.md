@@ -6,7 +6,7 @@
 
 本文假设我们已经注册了 OpenAI 账号，如果还没有创建 API 密钥，可以如下图进行操作。
 
-![ai-api-key.png](https://www.riafan.com/uploads/2212/ai-api-key.png)
+![ai-api-key.png](https://riafan.com/uploads/2301/ai-api-key.png)
 
 > 记得本地调试时将 `${process.env.API_KEY}` 替换成你的 KEY。
 
@@ -41,14 +41,12 @@
 
 左上角菜单 > “Project Settings” > “Env Variables”，填入先前生成的 API 密钥，如下图所示：
 
-![env.png](https://www.riafan.com/uploads/2304/env.png)
+![env.png](https://riafan.com/uploads/2304/env.png)
 
 6. 重启服务
 
 左上角菜单 > “Restart Sandbox” 重启服务，若能在右侧看到以下预览页面说明部署没大问题。预览页面地址栏显示的就是最终生成的代理服务地址。如本项目的 https://ge68te-3000.csb.app。
 
-![index.png](https://www.riafan.com/uploads/2304/index.png)
+![index.png](https://riafan.com/uploads/2304/index.png)
 
 > 如果不打算分享服务，可以将 Sandbox 项目移动到草稿中私有化，可以提高服务的安全性。
-
-以前老觉得 AI 高深莫测，打通 OpenAI API 的“任督二脉”之后, 我们应该对 AI 开发充满信心。
